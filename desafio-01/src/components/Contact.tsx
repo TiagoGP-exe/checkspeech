@@ -1,9 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { normalizePhoneNumber } from "../utils/string";
+import { Checkbox } from "./Inputs/Checkbox";
 import { SelectInput } from "./Inputs/SelectInput";
+import { TextAreaInput } from "./Inputs/TextAreaInput";
 import { TextInput } from "./Inputs/TextInput";
 
 interface IFormInput {
@@ -29,6 +31,7 @@ const schema = yup
       .email("O email é inválido")
       .required("O email é obrigatório"),
     description: yup.string().required("A descrição é obrigatória"),
+    country: yup.string().required("O país é obrigatório"),
   })
   .required();
 
@@ -44,6 +47,8 @@ export const Contact: FC = () => {
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
+
+  const [enabled, setEnabled] = useState(false);
 
   const setCountrie = (text: string) => {
     setValue("country", text);
@@ -67,7 +72,7 @@ export const Contact: FC = () => {
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-5 max-w-screen-md w-full items-center"
+        className="flex flex-col gap-5 max-w-screen-md bg-slate-300 w-full items-center"
       >
         <TextInput
           label="Nome"
@@ -77,24 +82,43 @@ export const Contact: FC = () => {
           className="w-full"
         />
         <TextInput
-          label="Telefone"
-          register={{ ...register("phone") }}
+          label="Email"
+          register={{ ...register("email") }}
+          type="email"
+          placeholder="Digite seu email"
+          error={errors.email?.message}
           className="w-full"
-          placeholder="Digite seu telefone"
-          error={errors.phone?.message}
         />
-
-        <SelectInput
-          setSelected={setCountrie}
-          label="País"
-          placeholder="Selecione o país"
+        <div className="flex w-11/12 items-center gap-3">
+          <SelectInput
+            setSelected={setCountrie}
+            label="País"
+            placeholder="Selecione o país"
+            error={errors.country?.message}
+          />
+          <TextInput
+            label="Telefone"
+            register={{ ...register("phone") }}
+            placeholder="Digite seu telefone"
+            className="w-full"
+            error={errors.phone?.message}
+          />
+        </div>
+        <TextAreaInput
+          label="mensagem"
+          register={{ ...register("description") }}
+          placeholder="Digite sua mensagem"
         />
-
+        <Checkbox
+          setEnabled={setEnabled}
+          label="Eu concordo com a Política de Privacidade."
+        />
         <button
+          disabled={!enabled}
           type="submit"
-          className="relative bg-primary font-[900] text-white border-[3px] border-black drop-shadow transition-all ease-in-out hover:tracking-widest duration-100 px-6 py-2 rounded-lg"
+          className="relative disabled:bg-slate-400 disabled:opacity-70 disabled:cursor-not-allowed bg-primary font-[900] text-white border-[3px] border-black drop-shadow transition-all ease-in-out hover:enabled:tracking-widest duration-100 px-6 py-2 rounded-lg"
         >
-          CONTATO
+          ENVIAR
         </button>
       </form>
     </div>

@@ -57,10 +57,10 @@ export const SelectInput: FC<TextInputProps> = (props) => {
 
   return (
     <>
-      <div className="w-11/12">
+      <div className="w-full max-w-[20rem]">
         <h1 className="ml-2 text-xl uppercase">{props.label}</h1>
 
-        <div className="mt-1 relative">
+        <div className=" relative">
           <button
             onClick={() => setVisible(!visible)}
             type="button"
@@ -74,8 +74,8 @@ export const SelectInput: FC<TextInputProps> = (props) => {
                     alt=""
                     className="flex-shrink-0 h-6  rounded-md border-2 border-black"
                   />
-                  <span className="ml-3 block truncate uppercase font-black">
-                    {selected.abreviation}
+                  <span className="ml-3 block  truncate uppercase font-black">
+                    {selected.name}
                   </span>
                 </>
               ) : (
@@ -113,7 +113,8 @@ export const SelectInput: FC<TextInputProps> = (props) => {
                       <li
                         key={abreviation}
                         onClick={() => {
-                          setSelected({ abreviation, flag, name });
+                          setSelected({ abreviation, flag, name }),
+                            props.setSelected(abreviation);
                           setVisible(false), setFilter("");
                         }}
                         className="text-gray-900 cursor-pointer select-none relative pl-1 hover:bg-slate-200 py-1 rounded-xl transition-all ease-in-out duration-200"
