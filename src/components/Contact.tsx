@@ -72,7 +72,7 @@ export const Contact: FC = () => {
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-5 max-w-screen-md bg-slate-300 w-full items-center"
+        className="flex flex-col gap-5 max-w-screen-md w-full items-center"
       >
         <TextInput
           label="Nome"
