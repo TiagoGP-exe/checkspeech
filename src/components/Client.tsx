@@ -15,29 +15,29 @@ export const Client: FC = () => (
     <img src={FirstSeparetion} className="w-full" />
     <h1 className="text-white font-black text-5xl pt-12">CLIENTES</h1>
 
-    <div className="flex flex-wrap mt-8 ">
+    <div className="flex flex-wrap mt-8 items-center justify-center">
       <img
-        className="h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
+        className="h-16 md:h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
         src={Client1}
         alt="Terra"
       />
       <img
-        className="h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
+        className="h-16 md:h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
         src={Client2}
         alt="Mindfulness"
       />
       <img
-        className="h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
+        className="h-16 md:h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
         src={Client3}
         alt="Orbitc"
       />
       <img
-        className="h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
+        className="h-16 md:h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
         src={Client4}
         alt="Product"
       />
       <img
-        className="h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
+        className="h-16 md:h-20 opacity-50 hover:opacity-100 duration-200 ease-in-out select-none"
         src={Client5}
         alt="Prolin2"
       />

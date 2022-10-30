@@ -57,14 +57,14 @@ export const SelectInput: FC<TextInputProps> = (props) => {
 
   return (
     <>
-      <div className="w-full max-w-[20rem]">
+      <div className="md:w-full w-11/12 md:max-w-[20rem]">
         <h1 className="ml-2 text-xl uppercase">{props.label}</h1>
 
         <div className=" relative">
           <button
             onClick={() => setVisible(!visible)}
             type="button"
-            className="relative z-40 w-full bg-white py-2 px-4 drop-shadow rounded-xl border-2 border-black"
+            className="relative z-10 w-full bg-white py-2 px-4 drop-shadow rounded-xl border-2 border-black"
           >
             <span className="flex items-center">
               {selected?.name ? (

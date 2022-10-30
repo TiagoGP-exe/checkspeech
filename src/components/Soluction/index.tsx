@@ -32,17 +32,17 @@ export const Soluctions: FC = () => {
       id="solution"
       className="flex flex-col items-center bg-secondary pt-[6rem] pb-12 -mt-1 px-4 min-h-[100vh]"
     >
-      <h1 className="text-[3.25rem] w-1/2 text-center uppercase mb-5">
+      <h1 className="md:text-[3.25rem] md:w-1/2 w-9/12 text-5xl text-center uppercase mb-5">
         Soluções
       </h1>
-      <p className=" w-1/3 text-center">
+      <p className="md:w-9/12  lg:w-1/3 px-2 text-center">
         Nossa solução é treinada em mais de 500.000 horas de áudios, transcritos
         por humanos de uma ampla variedade de idades, nacionalidades, sotaques e
         níveis de instruções A API é comercializada no modelo SAAS (software as
         a service).
       </p>
 
-      <div className="flex max-w-screen-lg items-start justify-center mt-10 gap-6">
+      <div className="flex flex-col md:flex-row max-w-screen-lg items-start justify-center mt-10 gap-6 transition-all duration-300 ease-in-out">
         <div className="flex flex-col gap-6">
           {dataOfSoluction.slice(0, 3).map((item) => (
             <SoluctionItem key={item.title} {...item} />

@@ -68,8 +68,10 @@ export const Contact: FC = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col items-center justify-center min-h-[90vh] bg-secondary pb-16 relative -mt-1"
+      className="flex flex-col items-center justify-center min-h-[90vh] bg-secondary  relative -mt-1"
     >
+      <h1 className=" font-black text-5xl py-12">CONTATO</h1>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-5 max-w-screen-md w-full items-center"
@@ -89,7 +91,7 @@ export const Contact: FC = () => {
           error={errors.email?.message}
           className="w-full"
         />
-        <div className="flex w-11/12 items-center gap-3">
+        <div className="flex flex-col md:flex-row w-full md:w-11/12 items-center gap-3 justify-center ">
           <SelectInput
             setSelected={setCountrie}
             label="País"

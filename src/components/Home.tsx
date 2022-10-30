@@ -2,11 +2,11 @@ import { FC } from "react";
 import Separation from "../assets/home-separation.svg";
 
 const Home: FC = () => (
-  <div className="flex flex-col items-center justify-center min-h-[90vh] pb-16 relative">
-    <h1 className="leading-tight text-[3.25rem] w-1/2 text-center uppercase mb-5">
+  <div className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-[90vh] pb-16 relative">
+    <h1 className="leading-tight text-3xl  md:text-4xl w-9/12  lg:text-[3.25rem]  lg:w-1/2 text-center uppercase mb-5">
       Transforme falas em textos de acordo com a demanda
     </h1>
-    <p className="w-1/3 text-center mb-10">
+    <p className="lg:w-1/3 w-9/12  text-center mb-10">
       CheckSpeech AI é um conjunto de APIs de conversão de fala em textos,
       <br />
       bem como a interpretação do sentimento dominante nos dizeres.

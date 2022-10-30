@@ -14,17 +14,19 @@ export const Checkbox: FC<CheckboxProps> = ({ label, setEnabled }) => {
       onClick={() => {
         setSelected(!selected), setEnabled(!selected);
       }}
-      className="flex items-center mb-4 cursor-pointer"
+      className="flex items-center mb-4 cursor-pointer justify-between pl-4 gap-5"
     >
-      <button
-        type="button"
-        className={`${
-          selected ? " bg-primary" : "bg-white"
-        } border-2 h-6 w-6 rounded-lg flex items-center justify-center border-black drop-shadow animation`}
-      >
-        {selected && <Check size={16} />}
-      </button>
-      <p className="ml-5 font-black ">{label}</p>
+      <div>
+        <button
+          type="button"
+          className={`${
+            selected ? " bg-primary" : "bg-white"
+          } border-2 h-6 w-6 rounded-lg flex items-center justify-center border-black drop-shadow animation`}
+        >
+          {selected && <Check size={14} />}
+        </button>
+      </div>
+      <p className="font-black text-sm">{label}</p>
     </div>
   );
 };
