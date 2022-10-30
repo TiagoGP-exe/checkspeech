@@ -12,10 +12,10 @@ export const Footer: FC = () => {
       className="flex flex-col items-center   relative bg-[#151423]"
     >
       <img src={FirstSeparetion} className="w-full" />
-      <div className="flex flex-wrap mt-12 items-center md:items-start justify-center md:justify-between max-w-screen-xl w-11/12 text-white">
+      <div className="flex gap-16 md:gap-0 md:flex-wrap flex-col md:flex-row mt-12 items-center md:items-start justify-center md:justify-between max-w-screen-xl w-11/12 text-white">
         <img className="h-10" src={Logo} />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 justify-center items-center md:items-start">
           <h3 className="text-2xl font-bold">LINK RÁPIDOS</h3>
           <p>Soluções</p>
           <p>Clientes</p>
@@ -23,7 +23,7 @@ export const Footer: FC = () => {
           <p>Contato</p>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 justify-center items-center md:items-start">
           <h3 className="text-2xl font-bold">CONTATO</h3>
           <div className="flex items-center gap-3 text-sm">
             <Phone className="text-primary" />
@@ -33,9 +33,9 @@ export const Footer: FC = () => {
             <Mail className="text-primary" />
             <p>comercial@check.com.br</p>
           </div>
-          <div className="flex items-start gap-3 text-sm">
+          <div className="flex items-start justify-center gap-3 text-sm">
             <MapPin className="text-primary" />
-            <p>
+            <p className="md:w-11/12 w-1/3">
               Rua Desembargador Edésio Fernandes, 148 Conj 208
               <br />
               Estoril - Belo Horizonte / MG-Brasil <br />
