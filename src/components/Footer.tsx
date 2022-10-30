@@ -27,7 +27,7 @@ export const Footer: FC = () => {
           <h3 className="text-2xl font-bold">CONTATO</h3>
           <div className="flex items-center gap-3 text-sm">
             <Phone className="text-primary" />
-            <p>+99 (99) 9999-999</p>m
+            <p>+99 (99) 9999-999</p>
           </div>
           <div className="flex items-center gap-3 text-sm">
             <Mail className="text-primary" />
